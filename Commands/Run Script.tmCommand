@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveModifiedFiles</string>
+	<key>command</key>
+	<string>#!/usr/bin/env python3
+
+"""Run the current document as a Python3 script"""
+
+import os
+import sys
+import re
+import functools
+import html
+from datetime import datetime
+
+
+
+support_paths = ['TM_BUNDLE_SUPPORT', 'TM_SUPPORT_PATH']
+sys.path[:0] = [os.environ[v]+'/lib' for v in support_paths if os.environ[v] not in sys.path]
+
+
+import TextMate as tm
+import TextMate.html_templates as tmpl
+
+RE_ERROR_LOCATION = re.compile(r'(^\s*)(File "(.*)", line (\d*))(.*)$')
+   
+class PyExecutor(tm.Executor):        
+      
+    def format_stdout(self, line):
+        line = tmpl.preserve_leading_indent(line)
+        return tmpl.make_div('line', line.rstrip())
+        
+    def format_stderr(self, line):
+        m = RE_ERROR_LOCATION.match(line)
+        if m:
+            indent, content, filepath, lineno, tail = m.groups()
+            line = f'{indent}{tmpl.make_txmt_link(filepath, lineno, content)}{tail}'    
+        line = tmpl.preserve_leading_indent(line)
+        return tmpl.make_span('err', tmpl.make_div('line', line.rstrip()))
+
+
+filepath = os.environ['TM_FILEPATH']
+title = os.path.basename(filepath)
+python = os.environ.get('TM_PYTHON', 'python3')
+subtitle = tm.sh([python, '-V'])
+
+print(tm.html_header(f'Running "{title}"…', subtitle, html_head=tmpl.executor_css()))
+print(tmpl.executor_preamble())
+e = PyExecutor()
+t0 = datetime.now()
+status = e.run([python, filepath], lambda pid : print(tmpl.make_pid(pid)))
+duration = datetime.now() - t0
+
+print(tmpl.executor_postamble(status, duration.total_seconds()))
+print(tm.html_footer())
+
+</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Run Script</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>scope</key>
+	<string>source.python</string>
+	<key>uuid</key>
+	<string>CA2EF01D-B27A-4341-B316-BF47F9BC18F8</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

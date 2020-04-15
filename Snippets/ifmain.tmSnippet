@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>if __name__ == '__main__':
+	${1:main()}$0</string>
+	<key>name</key>
+	<string>ifmain</string>
+	<key>scope</key>
+	<string>source.python</string>
+	<key>tabTrigger</key>
+	<string>ifmain</string>
+	<key>uuid</key>
+	<string>84F2A03C-056C-4837-8887-ECA55B850B57</string>
+</dict>
+</plist>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>def ${1:func}(self${2/([^,])?.*/(?1:, )/}${2:arg}):
+    ${3:pass}</string>
+	<key>name</key>
+	<string>Method</string>
+	<key>scope</key>
+	<string>source.python</string>
+	<key>tabTrigger</key>
+	<string>defs</string>
+	<key>uuid</key>
+	<string>D24CE03E-613C-46F2-B553-C336F3664E1E</string>
+</dict>
+</plist>

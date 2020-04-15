@@ -1,0 +1,14 @@
++ Reimplement webpreview (shell wrapper around a ruby script) in python
+  + default should not be part of options
+  + options should be sorted
++ Wrap up in TextMate python bundle with __init__.py controlling exports
+  E.g. import TextMate as tm 
+- tm_helpers should be modernized
+  + defaults read/write
+  - sh_escape  
+  - sh (execute command)
+- Implement executor in python
+  - Basic functionality: async, start, stop
+  - Make output parsing overridable
+  - Put HTML wrapping in webpreview.py
+  - 

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string></string>
+	<key>contactName</key>
+	<string>Per Persson</string>
+	<key>description</key>
+	<string>New shiny bundle for X.</string>
+	<key>mainMenu</key>
+	<dict>
+		<key>excludedItems</key>
+		<array>
+		</array>
+		<key>items</key>
+		<array>
+			<string>CA2EF01D-B27A-4341-B316-BF47F9BC18F8</string>
+			<string>------------------------------------</string>
+			<string>6D5C460F-806A-4C1B-9E1F-B30E9C24BB25</string>
+		</array>
+		<key>submenus</key>
+		<dict>
+			<key>6D5C460F-806A-4C1B-9E1F-B30E9C24BB25</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>0ED938A7-A76E-4520-9524-DB53F78E4995</string>
+					<string>D24CE03E-613C-46F2-B553-C336F3664E1E</string>
+					<string>BAD5FA9B-3612-43DA-A479-8D66710A0081</string>
+					<string>------------------------------------</string>
+					<string>01201413-EC15-4B63-B519-D6EB8B0FAF71</string>
+					<string>84F2A03C-056C-4837-8887-ECA55B850B57</string>
+				</array>
+				<key>name</key>
+				<string>Snippets</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>name</key>
+	<string>Python3</string>
+	<key>uuid</key>
+	<string>83DEC699-5AA9-4539-9F6D-A5BF61268973</string>
+</dict>
+</plist>
