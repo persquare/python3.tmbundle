@@ -18,7 +18,7 @@ from datetime import datetime
 
 
 
-support_paths = ['TM_BUNDLE_SUPPORT', 'TM_SUPPORT_PATH']
+support_paths = ['TM_PYTHON_HELPERS_BUNDLE_SUPPORT', 'TM_BUNDLE_SUPPORT', 'TM_SUPPORT_PATH']
 sys.path[:0] = [os.environ[v]+'/lib' for v in support_paths if os.environ[v] not in sys.path]
 
 

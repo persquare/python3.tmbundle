@@ -41,5 +41,14 @@
 	<string>Python3</string>
 	<key>uuid</key>
 	<string>83DEC699-5AA9-4539-9F6D-A5BF61268973</string>
+    <key>require</key>
+    <array>        
+        <dict>
+            <key>name</key>
+            <string>Python Helpers</string>
+            <key>uuid</key>
+            <string>35499A98-BE20-439E-B3FA-714F56392768</string>
+        </dict>
+    </array>
 </dict>
 </plist>
