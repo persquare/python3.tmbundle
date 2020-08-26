@@ -3,17 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Disable Indention Correction</string>
+	<string>Indentation rules</string>
 	<key>scope</key>
 	<string>source.python</string>
 	<key>settings</key>
 	<dict>
+		<key>decreaseIndentPattern</key>
+		<string>^\s*(elif|else|except|finally)\b.*:</string>
 		<key>disableIndentCorrections</key>
-		<true/>
+		<string>emptyLines</string>
+		<key>increaseIndentPattern</key>
+		<string>^\s*(class|((async\s+)?(def|with|for))|elif|else|except|finally|if|try|while)\b.*:\s*$</string>
 		<key>indentOnPaste</key>
 		<string>simple</string>
 	</dict>
 	<key>uuid</key>
-	<string>5B3272DB-6253-4E35-8763-99B01EDF9B46</string>
+	<string>2C0B920C-D54C-44CE-BA47-34E18F16B0B7</string>
 </dict>
 </plist>
