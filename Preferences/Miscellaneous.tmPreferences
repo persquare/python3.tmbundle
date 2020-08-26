@@ -8,10 +8,6 @@
 	<string>source.python</string>
 	<key>settings</key>
 	<dict>
-		<key>decreaseIndentPattern</key>
-		<string>^\s*(elif|else|except|finally)\b.*:|^\s*(\}|\])</string>
-		<key>increaseIndentPattern</key>
-		<string>^\s*(class|((async\s+)?(def|with|for))|elif|else|except|finally|if|try|while)\b.*:\s*$|(\{|\[)\s*$</string>
 		<key>shellVariables</key>
 		<array>
 			<dict>
@@ -29,6 +25,6 @@
 		</array>
 	</dict>
 	<key>uuid</key>
-	<string>33877934-69D3-4773-8786-9B5211012A9A</string>
+	<string>7832A039-DB49-40AF-BC51-0E867796CADF</string>
 </dict>
 </plist>
