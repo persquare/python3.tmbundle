@@ -3,20 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Symbol List</string>
+	<string>Symbol List: Disable decorators</string>
 	<key>scope</key>
-	<string>source.python meta.function.python, source.python meta.class.python</string>
+	<string>source.python meta.function.decorator.python entity.name.function.decorator.python</string>
 	<key>settings</key>
 	<dict>
+		<key>comment</key>
+		<string>Inherit showInSymbolList from source bundle, but override (disable) decorators</string>
 		<key>showInSymbolList</key>
-		<integer>1</integer>
-		<key>symbolTransformation</key>
-		<string>
-		s/class\s+([[:alpha:]_][[:alnum:]_]*.+?\)?)(\:|$)/$1/g;
-		s/def\s+([[:alpha:]_][[:alnum:]_]*\()(?:(.{,40}?\))|((.{40}).+?\)))(\:)/$1(?2:$2)(?3:$4…\))/g;
-	</string>
+		<integer>0</integer>
 	</dict>
 	<key>uuid</key>
-	<string>005BE156-8D74-4036-AF38-283708645115</string>
+	<string>F80FA402-6E2C-4E43-BD77-BF00350E4A2A</string>
 </dict>
 </plist>
