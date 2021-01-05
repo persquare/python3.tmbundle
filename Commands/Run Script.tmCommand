@@ -15,18 +15,9 @@ import re
 import html
 from datetime import datetime
 
-try:
-    envvars = ['TM_PYTHON_HELPERS_BUNDLE_SUPPORT', 'TM_BUNDLE_SUPPORT']
-    sys.path[:0] = [os.path.join(os.environ[v], 'lib') for v in envvars]
-except:
-    errmsg = """
-    The PythonHelpers bundle required, see&lt;br/&gt;
-    &lt;a href=https://github.com/persquare/PythonHelpers.tmbundle&gt;
-    github.com/persquare/PythonHelpers.tmbundle
-    &lt;/a&gt;
-    """
-    sys.stderr.write(errmsg)
-    sys.exit(205)
+sys.path[:0] = [os.path.join(os.environ['TM_BUNDLE_SUPPORT'], 'lib')]
+
+import commands
     
 import TextMate as tm
 import TextMate.html_templates as tmpl
