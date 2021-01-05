@@ -8,6 +8,8 @@
 	</array>
 	<key>firstLineMatch</key>
 	<string>^#!/.*\bpython[\d\.]*\b</string>
+	<key>injectionSelector</key>
+	<string>meta.embedded_python</string>
 	<key>keyEquivalent</key>
 	<string>^~P</string>
 	<key>name</key>
