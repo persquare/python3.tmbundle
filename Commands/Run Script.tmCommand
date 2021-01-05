@@ -12,6 +12,7 @@
 import os
 import sys
 import re
+import html
 from datetime import datetime
 
 try:
@@ -30,11 +31,12 @@ except:
 import TextMate as tm
 import TextMate.html_templates as tmpl
 
-RE_ERROR_LOCATION = re.compile(r'(^\s*)(File "(.*)", line (\d*))(.*)$')
+RE_ERROR_LOCATION = re.compile(r'(\s*)(File \"(.*?)\", line (\d*))(.*)')
    
 class PyExecutor(tm.Executor):        
       
     def format_stdout(self, line):
+        ine = html.escape(line)
         line = tmpl.preserve_leading_indent(line)
         return tmpl.make_div('line', line.rstrip())
         
@@ -42,7 +44,7 @@ class PyExecutor(tm.Executor):
         m = RE_ERROR_LOCATION.match(line)
         if m:
             indent, content, filepath, lineno, tail = m.groups()
-            line = f'{indent}{tmpl.make_txmt_link(filepath, lineno, content)}{tail}'    
+            line = f'{indent}{tmpl.make_txmt_link(filepath, lineno, html.escape(content))}{html.escape(tail)}'
         line = tmpl.preserve_leading_indent(line)
         return tmpl.make_span('err', tmpl.make_div('line', line.rstrip()))
 
