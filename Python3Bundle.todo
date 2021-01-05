@@ -1,7 +1,7 @@
 General:
 - Output formatting
   - Prettyprint stack trace, link to source
-- FIx command UUID weirdness
+- Fix command UUID weirdness
 
 Actions:
 - Run in terminal
