@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env python3
+
+"""Run the current document as a Python3 script"""
+
+import os
+import sys
+
+sys.path[:0] = [os.path.join(os.environ['TM_BUNDLE_SUPPORT'], 'lib')]
+
+import yoda
+
+docs = yoda.quickdoc() or [f"No docs found for '{os.environ.get('TM_CURRENT_WORD', 'selection')}'."]
+doc = "\n\n".join(docs)
+sys.stdout.write(doc)
+
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@d</string>
+	<key>name</key>
+	<string>Quick Doc</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>toolTip</string>
+	<key>scope</key>
+	<string>source.python</string>
+	<key>uuid</key>
+	<string>7392DE24-07EB-42C5-8120-F752BEE53F52</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

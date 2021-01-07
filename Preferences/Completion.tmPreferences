@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Completion</string>
+	<key>scope</key>
+	<string>source.python</string>
+	<key>settings</key>
+	<dict>
+		<key>completionCommand</key>
+		<string>yoda</string>
+		<key>disableDefaultCompletion</key>
+		<integer>1</integer>
+	</dict>
+	<key>uuid</key>
+	<string>712666F3-F5BB-4F9A-9B10-8D8FE3A1886D</string>
+</dict>
+</plist>
