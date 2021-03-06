@@ -27,7 +27,7 @@ RE_ERROR_LOCATION = re.compile(r'(\s*)(File \"(.*?)\", line (\d*))(.*)')
 class PyExecutor(tm.Executor):        
       
     def format_stdout(self, line):
-        ine = html.escape(line)
+        line = html.escape(line)
         line = tmpl.preserve_leading_indent(line)
         return tmpl.make_div('line', line.rstrip())
         
