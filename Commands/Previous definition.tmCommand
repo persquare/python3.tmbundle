@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>#!/usr/bin/env python3
+
+"""Move to next function/method/class in file."""
+
+import os
+import sys
+
+sys.path[:0] = [os.path.join(os.environ['TM_BUNDLE_SUPPORT'], 'lib')]
+
+import yoda
+
+goto_line = yoda.prev_def()
+
+if goto_line:
+    os.system(f"{os.environ['TM_MATE']} -l{goto_line}")
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>@</string>
+	<key>name</key>
+	<string>Previous definition</string>
+	<key>outputCaret</key>
+	<string>heuristic</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.python</string>
+	<key>uuid</key>
+	<string>6260C280-6974-40F1-A2E0-73AC6516ECBC</string>
+</dict>
+</plist>

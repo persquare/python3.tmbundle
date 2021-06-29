@@ -25,6 +25,33 @@ def _get_script():
     script = jedi.Script(code=source, path=path)
     return script
 
+def _find_def(prev):
+    import operator
+    cmp_op = operator.lt if prev else operator.gt
+    goto_line = 0 # There is no line zero, so use this as a bail-indicator
+    try:
+        line, col = _get_line_column()
+    except:
+        # Bail as there is no pure cursor
+        # FIXME: Go through some hoops to figure out cursor location.
+        return goto_line
+    script = _get_script()
+    context = script.get_context(line, col)
+    current_line = context.line if context.type in ('class', 'function') else line
+    defs = [d for d in script.get_names() if d.type in ('class', 'function')]
+    for d in defs:
+        if cmp_op(d.line, current_line):
+            goto_line = d.line
+            break
+
+    return goto_line
+
+def prev_def():
+    return _find_def(prev=True)
+
+def next_def():
+    return _find_def(prev=False)
+
 def completions():
     """Return a list of completion alternatives"""
     try:
